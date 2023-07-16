@@ -1,0 +1,10 @@
+body{
+    font-family: 'Heebo', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    display: grid;
+    column-gap: 15px;
+    row-gap: 30px;
+    grid-template-columns: 350px 350px 350px 350px;
+}

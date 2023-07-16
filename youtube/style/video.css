@@ -1,0 +1,30 @@
+.video-preview{
+    display: grid;
+    width: 350px;
+}
+.video-info{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    margin-top: 8px;
+}
+.thumbline{
+    width: 350px;
+}
+.profile-pic{
+    width: 40px;
+    border-radius: 50%;
+}
+.video-title{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.channel-author{
+    font-size: 12px;
+    color: rgb(147, 146, 146);
+    margin-bottom: 6px;
+}
+.channel-stats{
+    font-size: 12px;
+    color: rgb(147, 146, 146);
+}
