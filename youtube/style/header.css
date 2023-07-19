@@ -1,9 +1,15 @@
 .header{
     display: flex;
-    margin-top: 10px;
     height: 50px;
     justify-content: space-between;
     margin-bottom: 5px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding-top: 10px;
+    background-color: white;
+    border-bottom: 1px solid rgb(204, 204, 204);
 }
 .left-section{
     display: flex;
@@ -12,10 +18,10 @@
 }
 .middle-section{
     flex: 1;
-    width: 0;
     max-width: 500px;
     display: flex;
     height: 40px;
+    margin-left: 30px;
 }
 .right-section{
     width: 220px;
@@ -23,6 +29,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 12px;
+    flex-shrink: 0;
 }
 .hamburger-logo{
     margin-left: 14px;
@@ -41,12 +48,12 @@
     border-color: rgb(201, 197, 197);
     box-shadow: inset 1px 2px rgba(0, 0, 0, 0.05);
     font-size: 16px;
-    padding-left: 4px;
+    width: 0;
+    padding-left: 10px;
 }
 .search-bar::placeholder{
     font-family: Roboto;
     font-size: 16px;
-    padding-left: 10px;
 }
 .search-button{
     width: 60px;
