@@ -28,3 +28,10 @@
     font-size: 12px;
     color: rgb(147, 146, 146);
 }
+.time{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    color: white;
+}

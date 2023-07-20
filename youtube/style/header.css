@@ -73,23 +73,63 @@
     margin-right: 2px;
     margin-top: 4px;
     width: 24px;
+    padding-top: 2px;
+    padding-left: 2px;
 }
 .voice-logo{
     width: 22px;
     margin-top: 4px;
+    padding-top: 3px;
 }
 .upload-logo{
-    width: 30px;
+    width: 26px;
     margin-left: 20px;
 }
 .apps-logo{
-    width: 30px;
+    width: 26px;
 }
 .notifications-logo{
-    width: 30px;
+    width: 26px;
 }
 .my-channel{
+    margin-top: 5px;
     margin-right: 20px;
-    width: 30px;
+    width: 26px;
     border-radius: 50%;
+}
+.search-button,.voice-button,.right-tool1,.right-tool2,.right-tool3{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.search-button:hover,.voice-button:hover,.right-tool1:hover,.right-tool2:hover,.right-tool3:hover{
+    .tip-tool{
+        opacity: 1;
+    }
+}
+.right-tool1 .tip-tool,.right-tool2 .tip-tool,.right-tool3 .tip-tool{
+    bottom: -46px;
+    font-family: Roboto,Arial;
+    font-size: 12px;
+}
+.right-tool1,.right-tool2,.right-tool3{
+    display: flex;
+    justify-content: center;
+}
+.tip-tool{
+    white-space: nowrap;
+    position: absolute;
+    background-color: rgb(110, 110, 110);
+    color: white;
+    font-family: Roboto,Arial;
+    font-size: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: 10px;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 4px;
+    bottom: -40px;
 }

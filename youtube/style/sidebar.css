@@ -7,11 +7,13 @@
     top: 60px;
     width: 75px;
     bottom: 0;
+    z-index: 100;
 }
 .side-img{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 2px;
     align-items: center;
     height: 80px;
     transition: background-color 0.15s;

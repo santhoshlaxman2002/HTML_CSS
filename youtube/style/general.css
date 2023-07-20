@@ -11,17 +11,17 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     margin-left: 80px;
 }
-@media (min-width:1000px){
+@media (min-width:900px){
     .container{
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
-@media (max-width:750px){
+@media (max-width:650px){
     .container{
         grid-template-columns: 1fr 1fr;
     }
 }
-@media ((min-width:751px)and(max-width:999px)){
+@media ((min-width:651px)and(max-width:899px)){
     .container{
         grid-template-columns: 1fr 1fr 1fr;
     }
