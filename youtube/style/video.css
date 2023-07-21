@@ -30,8 +30,20 @@
 }
 .time{
     position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: black;
+    bottom: 8px;
+    right: 6px;
+    font-family: Roboto,Arial;
+    font-size: 12px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: rgb(39, 38, 38);
     color: white;
+    border-radius: 4px;
+}
+.thumb-pic{
+    position: relative;
+    width: 345px;
+    height: 198px;
 }
