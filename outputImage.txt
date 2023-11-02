@@ -1,0 +1,249 @@
+1)
+
+	Imwrite(A, filename )
+	
+	imwrite(X,map,"myearth.png")
+	imshow("myearth.png")
+
+	readImage1=imread(image_file1);
+	m = size(readImage1)
+	
+	B = imresize(A,scale)
+
+	Whos (filename)
+
+	I = rgb2gray(RGB)
+	newmap=rgb2gray(map)
+
+
+2)
+
+i=imread('pink.jpg');
+j=imhist(i)
+figure
+subplot(1,2,1);
+imshow(i)
+subplot(1,2,2);
+imshow(j)
+img=imadjust(i,[0.3,0.6],[0.0,1.0]);
+img2=histeq(i);
+img=imadjust(i,[0.3,0.6],[0.0,1.0]);
+img1=histeq(i);
+figure
+subplot(2,2,1);
+imshow(img)
+title('streached');
+subplot(2,2,2);
+imhist(img);
+subplot(2,2,3);
+imshow(img1);
+title('histeq');
+subplot(2,2,4);
+imhist(img1);
+
+
+3)
+
+im = imread( ‘ peakcock.tif’);
+xlabel( ‘Original’)
+noiseIm = imnoise(im , ‘salt & pepper’,0.05);
+subplot(2,3,1) , imshow(noiseIm);
+xlabel(‘salt & pepper’);
+denoise1 = filter2(fspecial(‘average’,3), noiseIm/255);
+subplot(2,3,2), imshow(denoise1);
+xlabel(‘Average Filetering’);
+denoise2 = medfilt2(noiseIm);
+subplot(2,3,3), imshow(denoise2);
+xlabel(‘Median Filetering’);
+denoise3 = imgaussfilt(noiseIm,2);
+subplot(2,3,4), imshow(denoise3);
+xlabel(‘Gaussian Filtering’);
+denoise4 = ordfilt2(noiseIm,5, ones(3));
+subplot(2,3,5), imshow(denoise4);
+xlabel(‘Gaussian Filtering’);
+denoise5 = winer2(noiseIm,5,[9,9]);
+subplot(2,3,6), imshow(denoise5);
+xlabel(‘Wiener Filtering’);
+
+4)
+
+srcfile=dir('D:\priyanka\*.jp);
+for i=1:length(srcfile)
+filename=strcat('D:\priyanka\',srcfile(i).name);
+I=imread(filename);
+figure,imshow(I);
+J=rgb2gray(I);
+path=strcat('D:\priyanka\Save\',srcfile(i).name);
+imwrite(J,path);
+end
+
+5)
+
+vid = VideoReader( ‘Tom_And_Jerry_Show_Intro.avi’);
+NumFrames = vid.NumFrames;
+n = NumFrames;
+for i = 1:2:n
+frames = read (vid ,i);
+imwrite(frames , [ ‘Image’ int2str(i), ‘.jpg’]);
+im(i) = image (frames);
+end
+
+6)
+
+clc;
+close all;
+clear all;
+% assigning the name of sample mp4 file to a variable
+filename = 'D:\matlap\video.avi';
+%reading a video file
+mov = VideoReader(filename);
+%getting no of frames
+numFrames = mov.NumberOfFrames;
+%setting current status of number of frames written to zero
+numFramesWritten = 0;
+%for loop to traverse & process from frame '1' to 'last' frames
+for t = 1 : 2 : numFrames
+currFrame = read(mov, t); %reading individual frames
+opBaseFileName = sprintf('%3.3d.png', t);
+opFullFileName = fullfile('D:\matlap', opBaseFileName);
+imwrite(currFrame, opFullFileName, 'png'); %saving as 'png' file
+progIndication = sprintf('Wrote frame %4d of %d.', t, numFrames);
+disp(progIndication);
+numFramesWritten = numFramesWritten + 1;
+end %end of 'for' loop
+progIndication = sprintf('Wrote %d frames to folder "%s"',numFramesWritten,
+'"D:\matlap\col1');
+disp(progIndication);
+%End of the code
+%frame differncing code
+I=imread('D:\matlap\367.png');
+I1=rgb2gray(I);
+imshow(I1);
+J=imread('D:\matlap\393.png');
+I1=rgb2gray(I);
+J1=rgb2gray(J);
+imshow(I1);
+imshow(J1);
+K=I1-J1;
+figure;
+imshow(K);
+title('SUBTRACTED IMAGE ');
+
+7)
+
+a=imread('rose.jpg');
+b=rgb2gray(a);
+subplot(2,4,1);
+imshow(b);
+title('gray sacle image');
+c=edge(b,'sobel');
+subplot(2,4,2);
+imshow(c);
+title('sobel');
+d=edge(b,'prewitt');
+subplot(2,4,3);
+imshow(d);
+title('prewitt');
+e=edge(b,'Roberts');
+subplot(2,4,4);
+imshow(e);
+title('Roberts');
+l=edge(b,'Log');
+subplot(2,4,5);
+imshow(l);
+title('Log');
+g=edge(b,'zerocross');
+subplot(2,4,6);
+imshow(g);
+title('zerocross');
+h=edge(b,'canny');
+subplot(2,4,7);
+imshow(h);
+title('canny');
+
+8)
+
+clc
+clear all
+close all
+warning off
+RGB=imread('colour.jpg');
+subplot(1,3,1)
+imshow(RGB)
+title('original Image');
+[BW,maskedImage] = segmentImage(RGB)
+subplot(1,3,2)
+imshow(BW)
+title('segment and binary image');
+subplot(1,3,3)
+imshow(RGB)
+title('Segmented color image');
+
+9)
+
+a=imread(uigetfile('car1.jpg'));
+a=rgb2gray(a);
+figure;imshow(a);title('car');
+[r c p]=size(a);
+b=a(r/3:r,1:c);
+imshow(b);title('LP AREA')
+[r c p]=size(b);
+Out=zeros(r,c);
+for i=1:r
+ for j=1:c
+ if b(i,j)>150
+ Out(i,j)=1;
+ else
+ Out(i,j)=0;
+ end
+ end
+end
+% load Out;
+BW3 = bwfill(Out,'holes');
+BW3=medfilt2(BW3,[4 4]);
+BW3=medfilt2(BW3,[4 4]);
+BW3=medfilt2(BW3,[4 4]);
+BW3=medfilt2(BW3,[5 5]);
+BW3=medfilt2(BW3,[5 5]);
+figure;imshow(BW3,[]);
+BW3 = bwfill(BW3,'holes');
+[L num]=bwlabel(BW3);
+STATS=regionprops(L,'all');
+disp(num);
+% close all;
+cc=[];
+removed=0;
+for i=1:num
+dd=STATS(i).Area;
+cc(i)=dd;
+if (dd < 50000)
+ L(L==i)=0;
+removed = removed + 1;
+ num=num-1;
+ end
+end
+[L2 num2]=bwlabel(L);
+figure,imshow(L2);
+STATS = regionprops(L2,'All');
+if num2>2
+ for i=1:num2 
+aa= STATS(i).Orientation; 
+if aa > 0
+  for i=1:num2 
+aa= STATS(i).Orientation; 
+imshow(L==i); 
+end
+ end
+disp('exit');
+end
+[r c]=size(L2);
+Out=zeros(r,c);
+k=1;
+B=STATS.BoundingBox;
+Xmin=B(2);
+Xmax=B(2)+B(4);
+Ymin=B(1)
+Ymax=B(1)+B(3);
+LP=[];
+LP=b(Xmin+25:Xmax-20,Ymin+10:Ymax-10);
+figure,imshow(LP,[]);
